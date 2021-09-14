@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Movie List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,12 +11,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
-        .m_box {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 10px;
-        }
-
         .m_tm_20 {
             margin-top: 20px;
         }
@@ -25,21 +19,32 @@
 
 <body>
 
-    <div class="container m_box">
+    <div class="container m_tm_20">
 
-        {% for movie in movies %}
-        <!-- start Movie Card -->
-        <div class="card" style="width:400px">
-            <img class="card-img-top" src="{{movie.small_cover_image}}" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h4 class="card-title">{{movie.title}}</h4>
-                <p class="card-text">{{movie.summary}}</p>
-                <p class="card-text">Rating: {{movie.rating}}</p>
-                <a href="#" class="btn btn-primary">See Details</a>
-            </div>
-        </div>
-        <!-- end Movie Card -->
-        {% endfor %}
+        <h1>Temperature : 25.7</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>Movie Title</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <!-- start Movie Card -->
+                <tr>
+                    <td><img src="{{movie.small_cover_image}}"></td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.summary}}</td>
+                    <td>Rating: {{movie.rating}}</td>
+                </tr>
+                <!-- end Movie Card -->
+                {% endfor %}
+            </tbody>
+        </table>
+
     </div>
 
 </body>
