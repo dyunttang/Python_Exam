@@ -26,8 +26,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Picture</th>
+                    <th>Poster</th>
                     <th>Movie Title</th>
+                    <th>Summary</th>
                     <th>Rating</th>
                 </tr>
             </thead>
@@ -38,7 +39,7 @@
                     <td><img src="{{movie.small_cover_image}}"></td>
                     <td>{{movie.title}}</td>
                     <td>{{movie.summary}}</td>
-                    <td>Rating: {{movie.rating}}</td>
+                    <td>{{movie.rating}}</td>
                 </tr>
                 <!-- end Movie Card -->
                 {% endfor %}
